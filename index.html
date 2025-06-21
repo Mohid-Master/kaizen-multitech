@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAIZEN MULTI-TECH - Innovative Software & Digital Solutions</title>
+    <!-- Favicon Links (as provided by you, ensuring full support) -->
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="KAIZEN MT" />
+<link rel="manifest" href="./site.webmanifest" /> <!-- Placeholder, would be a real manifest file -->
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts - Poppins (headings) & Lato (body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Theme Switcher (Desktop Version - Radio Buttons) -->
+    <div class="theme-switcher-desktop" id="themeSwitcherDesktop">
+        <label>
+            <input type="radio" name="theme" value="light" checked>
+            <span>Light</span>
+        </label>
+        <label>
+            <input type="radio" name="theme" value="dark">
+            <span>Dark</span>
+        </label>
+        <label>
+            <input type="radio" name="theme" value="neon">
+            <span>Neon</span>
+        </label>
+    </div>
+
+    <!-- Theme Switcher (Mobile Version - Magic Button) -->
+    <button class="theme-switcher-mobile" id="themeSwitcherMobile" aria-label="Change Theme">
+        <i class="fas fa-magic"></i>
+    </button>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#home" class="logo">KAIZEN MULTI-TECH</a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item nav-dropdown" id="campaigns-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Campaigns <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <!-- Campaign sub-items will be dynamically populated here by JS -->
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overlay for mobile sidebar -->
+    <div class="overlay" id="navOverlay"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline id="hero-video" class="hero-video">
+            <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
+            <!-- Fallback for browsers that don't support video, or if video fails to load -->
+            <img src="https://picsum.photos/seed/tech_abstract/1920/1080?grayscale&blur=3" alt="Abstract Tech Background Fallback" style="display:none;">
+        </video>
+        <!-- Overlay to ensure text readability over video -->
+        <div class="hero-video-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="gsap-hero-heading">Empowering Innovation, Driving Results.</h1>
+            <p class="gsap-hero-subheading">Your trusted partner for cutting-edge software solutions and seamless call center operations, designed to revolutionize your business.</p>
+            <a href="#services" class="btn gsap-hero-btn">Discover Our Solutions</a>
+        </div>
+
+        <!-- Animated Logo Text (for interactive animation) -->
+        <div class="animated-logo-text" id="animatedLogoText">KAIZEN MULTI-TECH</div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-light">
+        <div class="container text-center">
+            <h2 class="section-heading gsap-reveal-fade-up">Our Expertise, Your Success</h2>
+            <p class="section-subheading gsap-reveal-fade-up">We provide comprehensive, client-centric solutions tailored to meet your unique business needs and challenges.</p>
+            <div class="services-grid">
+                <div class="service-card gsap-reveal-fade-up">
+                    <i class="fas fa-store-alt"></i>
+                    <h3>E-Business Solutions</h3>
+                    <p>Building scalable and secure online business platforms for seamless operations and enhanced customer engagement.</p>
+                </div>
+                <div class="service-card gsap-reveal-fade-up">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Digital Marketing</h3>
+                    <p>Crafting data-driven digital strategies to boost your online visibility, attract leads, and convert customers.</p>
+                </div>
+                <div class="service-card gsap-reveal-fade-up">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Social Media Marketing</h3>
+                    <p>Engaging your audience and building brand loyalty through dynamic and targeted social media campaigns.</p>
+                </div>
+                <div class="service-card gsap-reveal-fade-up">
+                    <i class="fas fa-globe"></i>
+                    <h3>Website Development</h3>
+                    <p>Designing and developing high-performance, user-friendly websites tailored to your brand identity and business goals.</p>
+                </div>
+                <div class="service-card gsap-reveal-fade-up">
+                    <i class="fas fa-headset"></i>
+                    <h3>Call Center Solutions</h3>
+                    <p>Optimizing customer interactions with state-of-the-art call center technology and highly skilled agents.</p>
+                </div>
+                <div class="service-card gsap-reveal-fade-up">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity Consulting</h3>
+                    <p>Protecting your digital assets with comprehensive security strategies, threat detection, and compliance implementation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaign Gallery Section (Dynamically Generated) -->
+    <section id="campaigns-section" class="section section-dark">
+        <div class="container text-center">
+            <h2 class="section-heading gsap-reveal-fade-up">Our Impactful Campaigns</h2>
+            <p class="section-subheading gsap-reveal-fade-up">Discover how Kaizen Multi-Tech has powered successful campaigns for our diverse clientele.</p>
+            <div class="campaigns-grid" id="campaignsGrid">
+                <!-- Campaign items will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section section-light">
+        <div class="container text-center">
+            <h2 class="section-heading gsap-reveal-fade-up">About KAIZEN MULTI-TECH</h2>
+            <p class="section-subheading gsap-reveal-fade-up">At Kaizen Multi-Tech, we believe in the transformative power of innovation and technology. Our mission is to deliver cutting-edge digital solutions that enhance operational efficiency, elevate user experiences, and empower brands to stay ahead in an ever-evolving digital landscape.</p>
+            <div class="about-content">
+                <div class="about-text gsap-reveal-fade-up">
+                    <h3>Our Vision & Mission</h3>
+                    <p>With a focus on creativity, precision, and performance, Kaizen Multi-Tech specializes in E-Business Solutions, Digital Marketing, Social Media Marketing, and Website Development. We aspire to be the global leader in technological innovation, empowering businesses worldwide with transformative software and unparalleled customer service solutions.</p>
+                    <p>Our agile methodologies, dedicated teams, and a relentless pursuit of excellence ensure that every project we undertake is delivered with the highest standards of quality and efficiency. Whether you're a startup looking to establish a strong online presence or an enterprise seeking seamless digital transformation, Kaizen Multi-Tech is your trusted partner in success. Welcome to the future of digital excellence. Welcome to Kaizen Multi-Tech!</p>
+                </div>
+                <div class="about-image gsap-reveal-fade-up">
+                    <!-- <img src="https://picsum.photos/seed/business_meeting/600/400" alt="Professional Business Meeting"> -->
+                    <video autoplay muted loop playsinline id="about-video" class="about-video">
+            <source src="kaizen.mp4" type="video/mp4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section section-dark">
+        <div class="container text-center">
+            <h2 class="section-heading gsap-reveal-fade-up">Our Work Speaks Volumes</h2>
+            <p class="section-subheading gsap-reveal-fade-up">Explore a selection of our successful projects and see how we deliver tangible results and innovation.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item gsap-reveal-fade-up">
+                    <img src="mds.png" alt="Enterprise Platform">
+                    <div class="portfolio-content">
+                        <h3>Enterprise E-commerce Platform</h3>
+                        <p>Developed a custom, high-performance e-commerce platform that significantly enhanced user experience and sales conversion for a major retail client.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item gsap-reveal-fade-up">
+                    <img src="erm.jpeg" alt="CRM System">
+                    <div class="portfolio-content">
+                        <h3>Integrated CRM & ERP System</h3>
+                        <p>Implemented a comprehensive CRM and ERP solution for a large service provider, streamlining operations and improving client relationship management.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item gsap-reveal-fade-up">
+                    <img src="multi.jpeg" alt="Analytics Dashboard">
+                    <div class="portfolio-content">
+                        <h3>Real-time Business Intelligence Dashboard</h3>
+                        <p>Designed and deployed an intuitive, interactive dashboard providing critical real-time insights for a complex logistics and supply chain operation.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item gsap-reveal-fade-up">
+                    <img src="app.jpeg" alt="Mobile App Development">
+                    <div class="portfolio-content">
+                        <h3>Custom Cross-Platform Mobile Application</h3>
+                        <p>Engineered a high-performance, user-friendly mobile application available on both iOS and Android platforms for a fitness and wellness startup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="section section-light">
+        <div class="container text-center">
+            <h2 class="section-heading gsap-reveal-fade-up">Get in Touch with Innovation</h2>
+            <p class="section-subheading gsap-reveal-fade-up">We're eager to discuss your next big idea and provide the tailored solutions you need to thrive.</p>
+            <div class="contact-content">
+                <div class="contact-form gsap-reveal-fade-up">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Brief subject of your inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info gsap-reveal-fade-up">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i><span>123 Tech Avenue, Innovation City, IL 60601, USA</span></li>
+                        <li><i class="fas fa-phone-alt"></i><span>+1 (123) 456-7890</span></li>
+                        <li><i class="fas fa-envelope"></i><span>info@kaizenmultitech.com</span></li>
+                        <li><i class="fas fa-file-invoice"></i><span>UN Number: KMT-12345 (Global ID)</span></li>
+                        <li><i class="fas fa-registered"></i><span>Company Registration: XYZ-98765 (Registered Office)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://facebook.com/kaizenmultitech" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/kaizenmultitech" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/company/kaizenmultitech" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com/kaizenmultitech" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2024 KAIZEN MULTI-TECH. All rights reserved. Pioneering solutions for a connected world.</p>
+            <p style="margin-top: 10px;">Developed by <a href="https://i-am-mohid.netlify.app/" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">I am Mohid</a></p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+92 332 2473167?text=Hello%20Kaizen%20Multi-Tech%2C%20I%20am%20interested%20in%20your%20services." class="whatsapp-button" target="_blank" id="whatsappButton" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- External JavaScript Files -->
+    <script src="script.js" defer></script>
+    <script src="animations.js" defer></script>
+</body>
+</html>
