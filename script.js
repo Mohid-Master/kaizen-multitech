@@ -370,7 +370,7 @@ function showPaymentAlert() {
         if (notification.parentNode) {
             notification.remove();
         }
-    }, 3000);
+    }, 10000);
 }
 
 // Call the function to show the notification
