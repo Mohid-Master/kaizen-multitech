@@ -297,3 +297,82 @@ function generateCampaigns() {
 
 // Call to generate campaigns when the DOM is ready
 document.addEventListener('DOMContentLoaded', generateCampaigns);
+
+// Create a function to show the payment notification
+function showPaymentAlert() {
+    // Create style element for our notification
+    const style = document.createElement('style');
+    style.textContent = `
+        .payment-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff4444;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 9999;
+            max-width: 350px;
+            animation: slideUp 0.3s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .payment-notification h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .payment-notification p {
+            margin: 0 0 15px 0;
+            font-size: 14px;
+        }
+        .payment-notification button {
+            background: white;
+            color: #ff4444;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .payment-notification .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Create the notification element
+    const notification = document.createElement('div');
+    notification.className = 'payment-notification';
+    notification.innerHTML = `
+        <button class="close-btn" onclick="this.parentElement.remove()">×</button>
+        <h3>⚠️ Payment Required</h3>
+        <p>Your website charges have not been paid. Please settle the payment to avoid service interruption.</p>
+        <button onclick="alert('Redirecting to payment page...'); this.parentElement.remove();">Pay Now</button>
+    `;
+
+    // Add to the document
+    document.body.appendChild(notification);
+
+    // Auto-remove after 10 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 3000);
+}
+
+// Call the function to show the notification
+showPaymentAlert();
+setInterval(showPaymentAlert, 180000);
