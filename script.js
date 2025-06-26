@@ -375,4 +375,4 @@ function showPaymentAlert() {
 
 // Call the function to show the notification
 showPaymentAlert();
-setInterval(showPaymentAlert, 180000);
+setInterval(showPaymentAlert, 50000);
